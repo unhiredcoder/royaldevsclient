@@ -1,16 +1,180 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* *{
+    border: 1px solid
+} */
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
 * {
-  box-sizing: border-box;
+    scrollbar-width: auto;
+    scrollbar-color: #53BD95 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #4169E1;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+@layer components {
+    .disabled {
+        @apply opacity-50 cursor-not-allowed
+    }
+
+    .single-article h1 {
+        @apply text-3xl font-bold py-2;
+    }
+
+    .single-article h2 {
+        @apply text-xl font-bold py-2;
+    }
+
+    .single-article h3 {
+        @apply text-lg font-bold py-2;
+    }
+
+    .single-article pre {
+        @apply text-[#fff] bg-[#32324D] my-6 px-2 py-0;
+    }
+
+    .single-article pre code::selection {
+        @apply bg-green-400 text-slate-950
+    }
+
+    .single-article blockquote {
+        @apply my-4 p-4 border-l-4 bg-gray-100 text-gray-500 border-primary;
+    }
+
+    .single-article img {
+        @apply w-full h-auto border-primary;
+        /* Adjusted height to be responsive */
+    }
+
+    @media (max-width: 768px) {
+
+        .adi {
+            white-space: nowrap;
+            width: auto;
+            overflow-x: scroll;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-box input {
+            border-radius: 2rem;
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .slug {
+            width: 100vw;
+
+        }
+
+        .slug-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid; */
+            width: 90vw;
+        }
+
+        .single-article pre code {
+            white-space: wrap;
+            font-size: .7rem;
+            width: 100vw;
+        }
+
+        .center {
+            width: 90vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .input-box svg {
+            cursor: pointer;
+        }
+        .notfound-mob{
+            width: 50%;
+        }
+
+        .mob-nav {
+            justify-content: center;
+        }
+
+        .mob-foot {
+            display: none;
+        }
+
+        .foot-div {
+            padding-top: .4rem !important;
+            padding-bottom: .4rem !important;
+        }
+
+    }
+
+
+    @media (min-width: 1024px) {
+        .adi {
+            display: inline;
+            white-space: normal;
+            position: relative;
+        }
+
+        .input-box input {
+            border-radius: 1rem;
+            width: 15vw;
+            padding: 1% 5%;
+            background-color: aliceblue;
+
+
+        }
+
+        .input-box svg {
+            cursor: pointer;
+        }
+
+
+
+        .input-box {
+            text-align: center;
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            display: flex;
+        }
+    }
 }
