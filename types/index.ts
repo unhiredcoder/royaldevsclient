@@ -83,7 +83,7 @@ export interface IQueryOptions {
     sort: any;
     populate: any;
     pagination: {
-        page: number;
-        pageSize: number;
+        pageSize?: number;
+        page: any;
     };
 }
