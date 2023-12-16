@@ -16,7 +16,6 @@ interface IPropType {
 }
 
 const slug = ({ article, notFound = false }: IPropType) => {
-
     return (
         <>
             <Head>
@@ -35,7 +34,7 @@ const slug = ({ article, notFound = false }: IPropType) => {
                 <div className="flex items-center my-4">
                     <div className="rounded-full overflow-hidden flex items-center justify-center mr-2">
                         <Image
-                            src={`http://localhost:1337${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`}
+                            src={article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}
                             height={40}
                             width={40}
                             alt=''
@@ -53,7 +52,7 @@ const slug = ({ article, notFound = false }: IPropType) => {
                 <div className="slug text-lg text-gray-600 leading-8">
                     <img
                         className="slug-img w-full my-12 mb-6"
-                        src={`http://localhost:1337${article.attributes.image.data.attributes.url}`}
+                        src={article.attributes.image.data.attributes.url}
                         alt={article.attributes.title}
                     />
                     <div className="p-6">

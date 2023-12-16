@@ -9,6 +9,7 @@ interface IPropType {
 }
 
 const Blogcard = ({ article }: IPropType) => {
+    console.log("tttttttttttttt",article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url);
     return (
         <div>
             <Link href={`/article/${article.attributes.slug}`}>
@@ -22,7 +23,7 @@ const Blogcard = ({ article }: IPropType) => {
                 <motion.div className="rounded-full overflow-hidden flex items-center justify-center mr-2" initial={{ scale: 0 }} animate={{ scale: 1 }}>
                     <Image
                         className='w-full'
-                        src={`http://localhost:1337${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`}
+                        src={article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}
                         height={40}
                         width={40}
                         alt='iamge'
